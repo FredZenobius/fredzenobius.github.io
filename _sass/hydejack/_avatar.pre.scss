@@ -15,31 +15,30 @@
 
 .avatar {
   // <<< inline
-  width: 7rem;
-  height: 7rem;
+  width: 6.5rem;
+  height: 6.5rem;
   border-radius: 100%;
   overflow: hidden;
-  display: inline-block;
   // >>>
 
   // <<< link
+  display: inline-block;
   position: relative;
   z-index: 1;
+  img { width: 100%; }
   // >>>
 
   // <<< inline
-  img { width: 100%; }
+  @media screen and (min-width: $break-point-5) {
+    width: 7rem;
+    height: 7rem;
+  }
   // >>>
 }
 
 // <<< inline
 .content .avatar {
-  @extend .color-transition;
   float: right;
-  box-sizing: content-box;
-  border: 1rem solid var(--body-bg);
-  transition: border-color 1s ease;
-  margin-top: -1.5rem;
-  margin-right: -1rem;
+  margin-left: .5rem;
 }
 // >>>

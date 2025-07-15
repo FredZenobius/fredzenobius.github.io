@@ -24,32 +24,15 @@
 
 
 
-clap-button {
-  margin-left: auto;
-  margin-right: auto;
-  --clap-button-color: var(--accent-color);
-}
-
-clap-button + p.message {
-  margin: -2rem auto 0;
-  max-width: 32rem;
-  font-size: smaller
-}
-
 hr.dingbat {
   border: 0;
-  &:after{
-    content: "\2756";
-    display: block;
-    text-align: center;
-    font-size: 1.5rem;
-    color: var(--menu-text);
-  }
 }
 
-@media print {
-  .page {
-    margin-bottom: 0
-  }
+hr.dingbat::after {
+  content: "\2756";
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--menu-text);
 }
 

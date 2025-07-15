@@ -21,10 +21,8 @@ a[href^="#fnref:"] {
   margin-left: .1rem;
   font-weight: var(--font-weight-bold);
 
-  @media screen and (max-width: $break-point-4) {
+  @media screen and (max-width: 73.5em) {
     font-weight: normal;
-    &::before { content: "["; }
-    &::after  { content: "]"; }
   }
 }
 
@@ -35,6 +33,9 @@ sup {
     @media screen and (max-width: $break-point-4) {
       vertical-align: baseline;
       font-size: inherit;
+
+      > a::before { content: "["; }
+      > a::after  { content: "]"; }
     }
   }
 }
@@ -42,10 +43,9 @@ sup {
 // List of footnotes
 .footnotes {
   margin-top: 5rem;
-  margin-bottom: 5rem;
 
   > ol {
-    color: var(--gray);
+    color: var(--text-muted);
 
     > li {
       padding: .5rem;
@@ -63,7 +63,7 @@ sup {
     @extend .color-transition;
     content: "";
     display: block;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     border: 0;
     border-top: 1px solid var(--border-color);
   }

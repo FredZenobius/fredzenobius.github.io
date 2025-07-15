@@ -22,37 +22,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+table:not(.highlight) {
+  
 
-table:not(.rouge-table) {
-  @extend .figure-base;
-  border-collapse: collapse;
-  border-radius: 0!important;
+  
   display: block;
-  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
 
-  td, th {
-    @extend .color-transition;
-    padding: .5em .75em;
+  
 
-    &:first-child {
-      padding-left: 1rem;
-      border-left: 1px solid var(--border-color);
-    }
-
-    &:last-child {
-      padding-right: 1rem;
-      border-right: 1px solid var(--border-color);
-    }
-  }
-
-  > *:first-child {
-    border-top: 1px solid var(--border-color);
-  }
-
-  > *:last-child {
-    border-bottom: 1px solid var(--border-color);
-  }
-
+  
   thead {
     @extend .color-transition;
     background-color: var(--body-bg);
@@ -62,7 +43,7 @@ table:not(.rouge-table) {
   tbody + tbody,
   tfoot {
     @extend .color-transition;
-    border-top: 1px solid var(--border-color);
+    border-top: 3px double var(--border-color);
   }
 
   tbody tr:nth-child(even) td,
@@ -75,6 +56,14 @@ table:not(.rouge-table) {
   tbody tr:nth-child(odd) th {
     @extend .color-transition;
     background-color: var(--gray-bg);
+  }
+  
+}
+
+
+@media print {
+  table:not(.highlight) {
+    width: 100%!important;
   }
 }
 
@@ -89,6 +78,13 @@ table:not(.rouge-table) {
   display: flex;
   overflow: hidden;
 
+  thead,
+  thead + tbody,
+  tbody + tbody {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
   thead, tbody {
     display: flex;
   }
@@ -96,11 +92,9 @@ table:not(.rouge-table) {
   thead {
     flex-shrink: 0;
     min-width: min-content;
-    border-left: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
 
     th {
-      padding-left: 1em;
+      padding-left: 1rem;
     }
   }
 
@@ -108,6 +102,7 @@ table:not(.rouge-table) {
     position: relative;
     overflow-x: auto;
     overflow-y: hidden;
+    padding-left: 1px;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -117,25 +112,35 @@ table:not(.rouge-table) {
     min-width: min-content;
     flex-shrink: 0;
 
-    &:last-child {
-      border-right: 1px solid var(--border-color);
+    td {
+      border-left: none;
+    }
+
+    &:first-child {
       td {
-        padding-right: 1em;
+        border-left: 1px solid var(--border-color);
+      }
+    }
+
+    &:last-child {
+      td {
+        padding-right: 1rem;
+        border-right: 1px solid var(--border-color);
       }
     }
   }
 
   td, th {
     display: block;
+    border-bottom: none;
 
     &:first-child {
-      padding-left: .5em;
-      border-left: none;
+      padding-left: .5rem;
+      border-top: none;
     }
 
     &:last-child {
-      padding-right: .5em;
-      border-right: none;
+      padding-right: .5rem;
     }
   }
 }
@@ -143,11 +148,7 @@ table:not(.rouge-table) {
 table.stretch-table {
   display: table;
   width: 100% !important;
-  width: calc(100% + 2em) !important;
-  // @media screen and (max-width: $break-point-4) {
-  //   display: block!important;
-  //   @include scroll-table();
-  // }
+  width: calc(100% + 2rem) !important;
 }
 
 table.scroll-table {
@@ -165,12 +166,6 @@ table.flip-table {
 
   table.flip-table-small {
     @include flip-table();
-  }
-}
-
-@media print {
-  table:not(.rouge-table) {
-    width: 100%!important;
   }
 }
 
