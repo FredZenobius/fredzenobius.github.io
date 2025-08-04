@@ -1,6 +1,6 @@
 ---
 layout: post
-title: selenium 가상 드라이버 열기
+title: selenium으로 네이버 접속
 description: >
   selenium 모듈로 웹 드라이버를 열고 네이버로 이동
 author: 김성훈

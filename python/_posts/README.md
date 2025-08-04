@@ -1,13 +1,1 @@
----
-layout: category
-title: Python
-description: >
-  Python 글 목록
----
-
-<ul>
-  {% for post in site.categories.python %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-
+* [selenium으로 네이버 접속](./2025-08-04-selenium-naver-access.md)
