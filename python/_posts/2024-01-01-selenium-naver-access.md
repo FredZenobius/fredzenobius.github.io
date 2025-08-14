@@ -9,6 +9,7 @@ noindex: false
 
 selenium 모듈을 사용하면 크롬, 파이어폭스, 엣지 등의 웹 드라이버를 자동으로 실행, 제어할 수 있음
 
+진행하기 위해서는 아래의 모듈을 필수로 설치해야함
 ```bash
 pip install selenium
 ```
