@@ -59,8 +59,10 @@ menu:
     url:               /python/
   - title:             PHP
     url:               /php/
-  - title:             AWS
-    url:               /aws/
+  # - title:             AWS
+  #   url:               /aws/
+  - title:             mysql
+    url:               /mysql/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
