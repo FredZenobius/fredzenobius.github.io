@@ -62,3 +62,26 @@ while True:
     try: action.move_to_element(more_results).perform()
     except: continue
 ```
+
+## 3안.send_keys를 통한 화면 이동
+
+스크롤 대신 키보드의 page_down 혹은 화살표 아래 키를 누르는 것으로도 화면의 이동이 가능하다.
+단, `webdriver.Chrome()` 클래스는 `send_keys` 메서드가 없으므로 `body` 태그로 우회한다.
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+
+keyword = "검색어"
+
+search_url = f"https://search.naver.com/search.naver?ssc=tab.blog.all&sm=tab_jum&query={keyword}"
+
+driver.get(search_url)
+
+body = driver.find_element(By.TAG_NAME, "body")
+
+body.send_keys(Keys.PAGE_DOWN)
+```
