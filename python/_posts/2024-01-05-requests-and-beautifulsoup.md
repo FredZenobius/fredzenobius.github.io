@@ -49,3 +49,32 @@ print(soup.title.string)
 end = time.time()
 print("time:", end - start) # time: 0.20133614540100098
 ```
+
+# BeautifulSoup 상세
+
+selenium 과 다르게 BeautifulSoup에서는 send_keys와 같은 상호 동작은 취할 수 없으나, select와 같은 동작으로 요소를 추출하는 것은 가능하다.
+
+```python
+from bs4 import BeautifulSoup
+import requests
+
+url = "https://dhlottery.co.kr/common.do?method=main"
+response = requests.get(url)
+
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# 1등 조 추출
+group = soup.select_one('div[class="group"] span[class="num"]')
+print("1등 조:", group.get_text())
+
+# 1등 조 번호 출력
+numbers = soup.select('span[class*="num al720_color"]')
+
+# 1 ~ 6 번째 숫자는 당첨
+win_numbers = [num.get_text() for num in numbers[:6]]
+print("당첨 번호:", ''.join(win_numbers))
+
+# 보너스 번호
+bonus_numbers = [num.get_text() for num in numbers[-6:]]
+print("보너스 번호:", ''.join(bonus_numbers))
+```
