@@ -116,19 +116,19 @@ https://dokdokinfo.kr/housing 는 한국의 공동주택 정보를 정리해놓�
 
 https://dokdokinfo.kr/housing 에서 전체 지역의 도시별 아파트 단지수 및 세대수를 확인 할 수 있다.
 
-![전체 지역의 아파트 단지수](../assets/dokdokinfo-apart1.png)
+![전체 지역의 아파트 단지수](./assets/dokdokinfo-apart1.png)
 
 전체 지역의 아파트 단지수를 확인하기 위한 a 태그의 css selector는 다음과 같이 지정할 수 있다. `a[href^="./"]`
 
 [파란색 링크](https://dokdokinfo.kr/housingspecific/a10022657/)를 클릭하면 해당 지역의 아파트 목록을 확인할 수 있다.
 
-![경기도 지역의 아파트 목록](../assets/dokdokinfo-apart2.png)
+![경기도 지역의 아파트 목록](./assets/dokdokinfo-apart2.png)
 
 해당 지역의 아파트 목록을 확인하기 위한 a 태그의 css selector는 다음과 같이 지정할 수 있다. `a[href^="./"][class*="h4"]`
 
 [아파트 링크](https://dokdokinfo.kr/housingspecific/a10022657/)를 클릭하면 해당 아파트의 세부 정보를 확인할 수 있다.
 
-![e편한세상가평퍼스트원아파트 기본 정보](../assets/dokdokinfo-apart3.png)
+![e편한세상가평퍼스트원아파트 기본 정보](./assets/dokdokinfo-apart3.png)
 
 해당 아파트의 세부 정보를 확인하기 위한 a 태그의 css selector는 다음과 같이 지정할 수 있다. `a[href^="/housingspecific/a"]`
 
